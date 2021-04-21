@@ -24,11 +24,20 @@ public class ServicoBusca {
 	public BuscaDTO inserir(InserirBuscaDTO dto) {
 		Busca entidade = new Busca();
 		
-		// dto para entidade
+		if(repBusca.findByCep(dto.getCep()) != null) {
+			Busca busca = repBusca.findByCep(dto.getCep());
+			busca.setCriadoEm(Instant.now());
+			repBusca.save(busca);
+			return new BuscaDTO(busca);
+		}
+		else {
+			dtoParaEntidade(dto, entidade);
+			
+			entidade = repBusca.save(entidade);
+			
+			return new BuscaDTO(entidade);
+		}
 		
-		entidade = repBusca.save(entidade);
-		
-		return new BuscaDTO(entidade);
 	}
 	
 	public void dtoParaEntidade(InserirBuscaDTO dto, Busca entidade) {

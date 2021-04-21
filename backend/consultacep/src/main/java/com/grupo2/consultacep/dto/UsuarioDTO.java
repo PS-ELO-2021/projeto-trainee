@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 import com.grupo2.consultacep.entities.Busca;
 import com.grupo2.consultacep.entities.Usuario;
 
@@ -11,8 +14,11 @@ public class UsuarioDTO {
 
 	private Long id;
 	
+	@NotBlank
+	@Email(message = "Email inválido")
 	private String email;
 	
+	@NotBlank(message = "Campo obrigatório")
 	private String nome;
 	
 	private List<BuscaDTO> buscas = new ArrayList<>();

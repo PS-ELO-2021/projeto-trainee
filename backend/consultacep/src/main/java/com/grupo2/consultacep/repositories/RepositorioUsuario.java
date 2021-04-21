@@ -6,4 +6,5 @@ import com.grupo2.consultacep.entities.Usuario;
 
 public interface RepositorioUsuario extends JpaRepository<Usuario, Long>{
 
+	Usuario findByEmail(String email);
 }
