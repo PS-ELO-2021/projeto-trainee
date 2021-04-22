@@ -4,6 +4,7 @@ import java.time.Instant;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.grupo2.consultacep.dto.BuscaDTO;
 import com.grupo2.consultacep.dto.InserirBuscaDTO;
@@ -21,11 +22,16 @@ public class ServicoBusca {
 	@Autowired
 	RepositorioBusca repBusca;
 	
+	@Autowired
+	ServicoDeAutenticacao servicoDeAutenticacao;
+	
+	@Transactional
 	public BuscaDTO inserir(InserirBuscaDTO dto) {
 		Busca entidade = new Busca();
+		Usuario usuario = servicoDeAutenticacao.usuarioAutenticado();
 		
-		if(repBusca.findByCep(dto.getCep()) != null) {
-			Busca busca = repBusca.findByCep(dto.getCep());
+		if(repBusca.findByCepAndUsuario(dto.getCep(), usuario) != null) {
+			Busca busca = repBusca.findByCepAndUsuario(dto.getCep(), usuario);
 			busca.setCriadoEm(Instant.now());
 			repBusca.save(busca);
 			return new BuscaDTO(busca);
