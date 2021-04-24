@@ -31,7 +31,20 @@ input:disabled {
     display: flex;
 }
 
-.inputCep, .submitButton {
+.inputCep {
+    margin-right: 10px;
+    width: 12.5rem;
+}
+
+.submitButton {
+    border-radius: 10px;
+    height: 3.125rem;
+    width: 25.625rem;
+    
+    margin-bottom: 1rem;
+    
+    font-size: 1.5rem;
+
     margin-right: 10px;
     width: 12.5rem;
 }
