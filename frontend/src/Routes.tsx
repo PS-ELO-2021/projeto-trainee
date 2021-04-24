@@ -1,8 +1,9 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import Home from './pages/Home';
+
 import Registrar from './pages/Registrar';
 import Login from './pages/Login';
+import Home from './pages/Home';
 import Historico from './pages/Historico';
 
 export default function Routes() {
