@@ -1,0 +1,35 @@
+.container {
+    background-color: #30475E;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    border-radius: 10px;
+    height: 3.125rem;
+    width: 25.625rem;
+    
+    margin-bottom: 3rem;
+    
+    background-color: #F2A365;
+    
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #222831;
+}
+
+.h1-home {
+    font-size: 6.25rem;
+    color: #F2A365;
+}
+
+.h2-home {
+    font-size: 2.5rem;
+    color: #F2A365;
+    margin-bottom: 2rem;
+}
