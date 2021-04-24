@@ -13,7 +13,7 @@
 
 }
 
-input {
+.inputHome {
     border-radius: 10px;
     height: 3.125rem;
     width: 25.625rem;
@@ -21,10 +21,14 @@ input {
     margin-bottom: 1rem;
     
     font-size: 1.5rem;
+
+    outline: none;
 }
 
-input:disabled {
+.inputHome:disabled {
     background-color: #ECECEC;
+
+    cursor: not-allowed;
 }
 
 .formularioCep {
@@ -47,4 +51,6 @@ input:disabled {
 
     margin-right: 10px;
     width: 12.5rem;
+
+    outline: none;
 }

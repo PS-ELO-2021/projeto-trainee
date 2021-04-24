@@ -8,27 +8,27 @@ export default function FormConsultaCep() {
             <form>
                 <div className={styles.formularioCep}>
                     <input id="cep" 
-                    className={styles.inputCep} 
+                    className={`${styles.inputCep} ${styles.inputHome}`} 
                     type="text" 
                     placeholder="Digite o CEP" 
                     pattern="[0-9]{8}" />
-                    
+
                     <input type="button" 
                     value="Consultar" 
                     className={styles.submitButton}
                     onClick={() => {buscarCep()}} />
                 </div>
                 <div>
-                    <input id="logradouro" type="text" disabled></input>
+                    <input className={styles.inputHome} id="logradouro" type="text" disabled></input>
                 </div>
                 <div>
-                    <input id="bairro" type="text" disabled></input>
+                    <input className={styles.inputHome} id="bairro" type="text" disabled></input>
                 </div>
                 <div>
-                    <input id="cidade" type="text" disabled></input>
+                    <input className={styles.inputHome} id="cidade" type="text" disabled></input>
                 </div>
                 <div>
-                    <input id="estado" type="text" disabled></input>
+                    <input className={styles.inputHome} id="estado" type="text" disabled></input>
                 </div>
             </form>
         </div>
