@@ -1,0 +1,21 @@
+body {
+    background-color: #30475E;
+    font-family: "Inter";
+}
+
+h1 {
+    margin: 0;
+    font-size: 6.25rem;
+    font-weight: bold;
+    text-align: center;
+    color: #F2A365;
+    text-shadow: 3px 3px 4px rgba(37,55,72,0.6);
+}
+
+h2 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: #F2A365;
+}
