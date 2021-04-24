@@ -11,7 +11,7 @@ type formstate = {
 function onSubmit(data: formstate){
     fazerLogin(data)
     .then(response => {
-        console.log(response);
+        localStorage.setItem('token', JSON.stringify(response.data))
     })
 }
 

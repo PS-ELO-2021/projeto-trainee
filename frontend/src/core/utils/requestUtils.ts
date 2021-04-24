@@ -1,9 +1,9 @@
-import axios, {Method} from 'axios';
+import axios, {AxiosRequestConfig, Method} from 'axios';
 
 type RequestParams = {
     method?: Method;
     url: string;
-    data?: object;
+    data?: any;
     params?: object;
     headers?: object;
 }
@@ -15,20 +15,15 @@ type LoginData = {
 
 const URL_BASE = "http://localhost:8080"
 
-export const requisicao = ({method = 'GET', url, data, params, headers}:RequestParams) => {
+export const requisicao = (params: AxiosRequestConfig) => {
     return axios({
-        method,
-        url: `${url}`,
-        data,
-        params
+        ...params
     });
 }
 
 export const fazerLogin = (data:LoginData) => {
-    const payload = {
-        ...data,
-        grant_type: 'password'
-    }
+    const payloadString: string = `username=${data.username}&password=${data.password}&grant_type=password`;
+    
 
     const token = `grupo2:654321`
     const headers = {
@@ -36,5 +31,5 @@ export const fazerLogin = (data:LoginData) => {
         'Content-Type': 'application/x-www-form-urlencoded'
     }
 
-    return requisicao({method: 'POST', url: `${URL_BASE}/oauth/token`, data: payload, headers})
+    return requisicao({method: 'POST', url: `${URL_BASE}/oauth/token`, data: payloadString, headers})
 }
