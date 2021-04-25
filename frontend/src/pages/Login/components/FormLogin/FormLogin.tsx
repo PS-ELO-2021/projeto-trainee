@@ -16,7 +16,7 @@ export default function FormLogin() {
     const onSubmit = (data: formstate) => {
         fazerLogin(data)
         .then(response => {
-        localStorage.setItem('token', JSON.stringify(response.data))
+            localStorage.setItem('token', JSON.stringify(response.data))
         })
         .then(() => {
             history.push('/')

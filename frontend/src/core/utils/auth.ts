@@ -12,3 +12,11 @@ export function getSessaoUsuario() {
 
     return sessaoUsuario
 }
+
+export function getSessaoUsuarioAsLoginType() {
+    const sessaoUsuario = getSessaoUsuario()
+
+    const parsedSessaoUsuario = JSON.parse(sessaoUsuario)
+
+    return parsedSessaoUsuario as loginType
+}
