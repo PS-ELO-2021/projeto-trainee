@@ -3,17 +3,13 @@ import styles from './FormLogin.module.css'
 import { useForm } from 'react-hook-form'
 import { fazerLogin, isAutenticado, requisicao } from '../../../../core/utils/requestUtils';
 import { Link, Redirect, Route, useHistory } from 'react-router-dom';
-
-type formstate = {
-    username: string;
-    password: string;
-}
+import { LoginFormState } from '../../../../core/utils/types';
 
 export default function FormLogin() {
-    const {register, handleSubmit, errors} = useForm<formstate>();
+    const {register, handleSubmit, errors} = useForm<LoginFormState>();
     let history = useHistory()
 
-    const onSubmit = (data: formstate) => {
+    const onSubmit = (data: LoginFormState) => {
         fazerLogin(data)
         .then(response => {
             localStorage.setItem('token', JSON.stringify(response.data))

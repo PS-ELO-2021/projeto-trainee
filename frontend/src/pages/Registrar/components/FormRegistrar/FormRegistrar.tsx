@@ -1,33 +1,15 @@
 import React from 'react';
 import styles from './FormRegistrar.module.css'
 import { useForm } from 'react-hook-form'
-import { fazerLogin, requisicao, LoginData } from '../../../../core/utils/requestUtils';
+import { fazerLogin, requisicao } from '../../../../core/utils/requestUtils';
 import { useHistory } from 'react-router';
-
-type formstate = {
-    nome: string;
-    email: string;
-    senha: string;
-}
-
-// function onSubmit(data: formstate){
-//     requisicao({method:'POST', url:'http://localhost:8080/registrar', data})
-    
-//     const loginData: LoginData = {username: data.email, password: data.senha}
-//     fazerLogin(loginData)
-//     .then(response => {
-//         localStorage.setItem('token', JSON.stringify(response.data))
-//     })
-//     .then(() => {
-//         history.push('/')
-//     })
-// }
+import { LoginData, RegistrarFormState } from '../../../../core/utils/types';
 
 export default function FormRegistrar() {
-    const {register, handleSubmit, errors} = useForm<formstate>()
+    const {register, handleSubmit, errors} = useForm<RegistrarFormState>()
     let history = useHistory()
 
-    const onSubmit = (data: formstate) => {
+    const onSubmit = (data: RegistrarFormState) => {
         requisicao({method:'POST', url:'http://localhost:8080/registrar', data})
         .then(() => {
             const loginData: LoginData = {username: data.email, password: data.senha}

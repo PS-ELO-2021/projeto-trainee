@@ -1,18 +1,6 @@
 import axios, {AxiosRequestConfig, Method} from 'axios';
 import { getSessaoUsuario } from './auth';
-
-type RequestParams = {
-    method?: Method;
-    url: string;
-    data?: any;
-    params?: object;
-    headers?: object;
-}
-
-export type LoginData = {
-    username: string;
-    password: string;
-}
+import { LoginData } from './types';
 
 const URL_BASE = "http://localhost:8080"
 

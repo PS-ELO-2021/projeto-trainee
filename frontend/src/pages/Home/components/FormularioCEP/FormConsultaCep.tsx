@@ -2,17 +2,8 @@ import React from 'react';
 import styles from './FormConsultaCep.module.css';
 import {requisicao} from '../../../../core/utils/requestUtils'
 import { getSessaoUsuarioAsLoginType } from '../../../../core/utils/auth';
-
-type Busca = {
-    cep: string;
-    logradouro: string;
-    bairro: string;
-    cidade: string;
-    estado: string;
-    usuario: {
-        id: number;
-    }
-}
+import { AxiosResponse } from 'axios';
+import { Busca } from '../../../../core/utils/types';
 
 export default function FormConsultaCep() {
     return(
@@ -60,25 +51,28 @@ function buscarCep() {
         bairroElement.value = response.data.bairro
         cidadeElement.value = response.data.localidade
         estadoElement.value = response.data.uf
-    
-        const busca: Busca = {
-            cep: cep,
-            logradouro: response.data.logradouro,
-            bairro: response.data.bairro,
-            cidade: response.data.localidade,
-            estado: response.data.uf,
-            usuario: {
-                id: getSessaoUsuarioAsLoginType().idUsuario
-            }
-        }
 
-        const token = getSessaoUsuarioAsLoginType().access_token
-
-        const headers = {
-            Authorization: `Bearer ${token}`
-        }
-
-        requisicao({method:'POST', url:'http://localhost:8080/buscas', data: busca, headers})
-
+        salvarCep(response)
     });
+}
+
+function salvarCep(response: AxiosResponse) {
+    const busca: Busca = {
+        cep: response.data.cep,
+        logradouro: response.data.logradouro,
+        bairro: response.data.bairro,
+        cidade: response.data.localidade,
+        estado: response.data.uf,
+        usuario: {
+            id: getSessaoUsuarioAsLoginType().idUsuario
+        }
+    }
+
+    const token = getSessaoUsuarioAsLoginType().access_token
+
+    const headers = {
+        Authorization: `Bearer ${token}`
+    }
+
+    requisicao({method:'POST', url:'http://localhost:8080/buscas', data: busca, headers})
 }
