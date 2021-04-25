@@ -1,4 +1,5 @@
 import axios, {AxiosRequestConfig, Method} from 'axios';
+import { getSessaoUsuario } from './auth';
 
 type RequestParams = {
     method?: Method;
@@ -32,4 +33,11 @@ export const fazerLogin = (data:LoginData) => {
     }
 
     return requisicao({method: 'POST', url: `${URL_BASE}/oauth/token`, data: payloadString, headers})
+}
+
+export function isAutenticado() {
+    if(getSessaoUsuario() === '{}') {
+        return false;
+    }
+    return true;
 }
