@@ -1,0 +1,47 @@
+.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxContainer {
+  /* Dark Palette 1 */
+  background-color: #222831;
+  margin: 0rem 1.25rem 0.8rem 1.25rem;
+  border-radius: 3.125rem;
+  display: block;
+  padding: 2rem;
+  width: 31rem;
+  "height: 30.625rem;"
+  font-family: "Inter";
+  /* Dark Palette 3 */
+  color: #F2A365;
+  box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
+}
+
+.resultHist {
+  font-size: 1.5rem;
+  color: #222831;
+  border-radius: 0.625rem;
+  padding: 0.625rem;
+  margin: 0.8rem 0.5rem 0.8rem 0.5rem;
+  outline: none;
+  background: #ECECEC;  
+  text-align: justify;
+}
+
+.resultHistCEP {
+  margin: 0.8rem 5.5rem 1.5rem 5.5rem;
+  text-align: center;
+}
+
+.buscaHist {
+  border-radius: 0.625rem;
+  padding: 0.625rem;
+  font-size: 1.5rem;
+  margin: 0rem 0rem 3rem 0rem;
+  justify-content: center;
+  color: #222831;
+}
