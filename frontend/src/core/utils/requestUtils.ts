@@ -1,34 +1,18 @@
-import axios, {Method} from 'axios';
-
-type RequestParams = {
-    method?: Method;
-    url: string;
-    data?: object;
-    params?: object;
-    headers?: object;
-}
-
-type LoginData = {
-    username: string;
-    password: string;
-}
+import axios, {AxiosRequestConfig, Method} from 'axios';
+import { getSessaoUsuario } from './auth';
+import { LoginData } from './types';
 
 const URL_BASE = "http://localhost:8080"
 
-export const requisicao = ({method = 'GET', url, data, params, headers}:RequestParams) => {
+export const requisicao = (params: AxiosRequestConfig) => {
     return axios({
-        method,
-        url: `${url}`,
-        data,
-        params
+        ...params
     });
 }
 
 export const fazerLogin = (data:LoginData) => {
-    const payload = {
-        ...data,
-        grant_type: 'password'
-    }
+    const payloadString: string = `username=${data.username}&password=${data.password}&grant_type=password`;
+    
 
     const token = `grupo2:654321`
     const headers = {
@@ -36,5 +20,12 @@ export const fazerLogin = (data:LoginData) => {
         'Content-Type': 'application/x-www-form-urlencoded'
     }
 
-    return requisicao({method: 'POST', url: `${URL_BASE}/oauth/token`, data: payload, headers})
+    return requisicao({method: 'POST', url: `${URL_BASE}/oauth/token`, data: payloadString, headers})
+}
+
+export function isAutenticado() {
+    if(getSessaoUsuario() === '{}') {
+        return false;
+    }
+    return true;
 }

@@ -1,23 +1,28 @@
 import React from 'react';
 import styles from './FormRegistrar.module.css'
 import { useForm } from 'react-hook-form'
-import { requisicao } from '../../../../core/utils/requestUtils';
-
-type formstate = {
-    nome: string;
-    email: string;
-    senha: string;
-}
-
-function onSubmit(data: formstate){
-    requisicao({method:'POST', url:'http://localhost:8080/registrar', data})
-    .then(() => {
-        console.log("Usuário cadastrado");
-    })
-}
+import { fazerLogin, requisicao } from '../../../../core/utils/requestUtils';
+import { useHistory } from 'react-router';
+import { LoginData, RegistrarFormState } from '../../../../core/utils/types';
 
 export default function FormRegistrar() {
-    const {register, handleSubmit, errors} = useForm<formstate>();
+    const {register, handleSubmit, errors} = useForm<RegistrarFormState>()
+    let history = useHistory()
+
+    const onSubmit = (data: RegistrarFormState) => {
+        requisicao({method:'POST', url:'http://localhost:8080/registrar', data})
+        .then(() => {
+            const loginData: LoginData = {username: data.email, password: data.senha}
+            fazerLogin(loginData)
+            .then(response => {
+                localStorage.setItem('token', JSON.stringify(response.data))
+            })
+            .then(() => {
+                history.push('/')
+            })
+        })
+    }
+
     return(
         <div className={styles.container}>
             <h2>Criar Conta</h2>
