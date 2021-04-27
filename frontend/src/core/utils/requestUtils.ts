@@ -1,5 +1,5 @@
 import axios, {AxiosRequestConfig, Method} from 'axios';
-import { getSessaoUsuario } from './auth';
+import { getSessaoUsuario, getSessaoUsuarioAsLoginType } from './auth';
 import { LoginData } from './types';
 
 const URL_BASE = "http://localhost:8080"
@@ -7,6 +7,18 @@ const URL_BASE = "http://localhost:8080"
 export const requisicao = (params: AxiosRequestConfig) => {
     return axios({
         ...params
+    });
+}
+
+export const requisicaoPrivada = (params: AxiosRequestConfig) => {
+    const token = getSessaoUsuarioAsLoginType().access_token
+    
+    const headers = {
+       Authorization: `Bearer ${token}`
+    }
+    
+    return requisicao({
+        ...params, headers
     });
 }
 

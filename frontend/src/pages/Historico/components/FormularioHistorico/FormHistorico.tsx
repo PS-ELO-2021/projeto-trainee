@@ -1,38 +1,19 @@
 import React from 'react';
+import { BuscaAPI } from '../../../../core/utils/types';
 import styles from './FormHistorico.module.css';
 
-export default function FormHistorico() {
+export default function FormHistorico(testeporra : BuscaAPI) {
     return(
         <div>
-            <form className={styles.flexContainer}>
-                <input 
-                    className={styles.buscaHist} 
-                    type="text" 
-                    placeholder="Buscar no histórico" />
-            </form>
-            <div className={styles.flexContainer}>
-                <div className={styles.boxContainer}>
-                    <p className={styles.resultHist + ' ' + styles.resultHistCEP}>CEP</p>
-                    <p className={styles.resultHist}>Logradouro</p>
-                    <p className={styles.resultHist}>Bairro</p>
-                    <p className={styles.resultHist}>Cidade</p>
-                    <p className={styles.resultHist}>Estado</p>
-                </div>
-                <div className={styles.boxContainer}>
-                    <p className={styles.resultHist + ' ' + styles.resultHistCEP}>CEP</p>
-                    <p className={styles.resultHist}>Logradouro</p>
-                    <p className={styles.resultHist}>Bairro</p>
-                    <p className={styles.resultHist}>Cidade</p>
-                    <p className={styles.resultHist}>Estado</p>
-                </div>
-                <div className={styles.boxContainer}>
-                    <p className={styles.resultHist + ' ' + styles.resultHistCEP}>CEP</p>
-                    <p className={styles.resultHist}>Logradouro</p>
-                    <p className={styles.resultHist}>Bairro</p>
-                    <p className={styles.resultHist}>Cidade</p>
-                    <p className={styles.resultHist}>Estado</p>
-                </div>
-            </div>
+            <div className={styles.boxContainer}>
+                <p className={styles.resultHist + ' ' + styles.resultHistCEP}>CEP</p>
+                <p className={styles.resultHist}>{testeporra.logradouro}</p>
+                <p className={styles.resultHist}>{testeporra.bairro}</p>
+                <p className={styles.resultHist}>{testeporra.cidade}</p>
+                <p className={styles.resultHist}>{testeporra.estado}</p>
+             </div>
         </div>
     );
 }
+
+
