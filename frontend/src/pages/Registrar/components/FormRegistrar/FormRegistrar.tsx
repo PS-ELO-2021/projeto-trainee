@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { fazerLogin, requisicao } from '../../../../core/utils/requestUtils';
 import { useHistory } from 'react-router';
 import { LoginData, RegistrarFormState } from '../../../../core/utils/types';
+import { Link } from 'react-router-dom';
 
 export default function FormRegistrar() {
     const {register, handleSubmit, errors} = useForm<RegistrarFormState>()
@@ -40,7 +41,7 @@ export default function FormRegistrar() {
                 <p className={styles.obs}>*A senha deve ter pelo menos 6 caracteres</p>
                 <input type="submit" className={styles.button} value="Cadastrar"></input><br /><br />
             </form>
-            <button type="button" className={styles.buttonLogin}>Faça o Login</button>
+            <Link to="/login" className={styles.buttonLogin} >Faça o Login</Link>
         </div>
     );
 }

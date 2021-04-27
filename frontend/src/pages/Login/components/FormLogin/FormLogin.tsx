@@ -33,7 +33,7 @@ export default function FormLogin() {
                 <input type="submit" className={styles.button} value="Login">
                 </input><br /><br />
             </form>
-            <button type="button" className={styles.buttonCriar}>Crie sua conta</button>
+            <Link to="/registrar" className={styles.buttonCriar}>Crie sua conta</Link>
         </div>
     );
 }
