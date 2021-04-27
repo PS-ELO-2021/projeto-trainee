@@ -12,8 +12,15 @@ export default function Historico() {
         requisicaoPrivada({method:'GET', url:'http://localhost:8080/buscas'})
         .then(response => {
             setMinhaBusca(response.data) 
+            
         })
     }, [])
+
+    minhaBusca.sort(function(a, b) {
+        var c = new Date(a.criadoEm);
+        var d = new Date(b.criadoEm);
+        return d.getTime() - c.getTime();
+    })
 
     return(
         <div className="containerHist">
