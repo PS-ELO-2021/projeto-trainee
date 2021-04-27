@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background: #222831;
+    padding: 5px 20px;
+}
+
+.logoutButton {
+    background: #710407;
+
+    border-radius: 2px;
+    border: none;
+    outline: none;
+
+    height: 60%;
+    width: 100px;
+
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+
+    justify-self: right;
+}
+
+.displayNone {
+    display: none;
+}
+
+.navbarText {
+    color: #ECECEC;
+}
