@@ -2,24 +2,18 @@ import React, { useEffect, useRef, useState } from 'react';
 import FormHistorico from './components/FormularioHistorico/FormHistorico';
 import './index.css'
 import {Link} from 'react-router-dom';
-import { getSessaoUsuarioAsLoginType } from '../../core/utils/auth';
-import { requisicao, requisicaoPrivada } from '../../core/utils/requestUtils';
-import {Busca, BuscaAPI} from '../../core/utils/types'
+import { requisicaoPrivada } from '../../core/utils/requestUtils';
+import { BuscaAPI } from '../../core/utils/types';
 
 export default function Historico() {
-    const [minhaBusca, setMinhaBusca] = useState([])
-
-    let result: any[] = []
+    const [minhaBusca, setMinhaBusca] = useState<BuscaAPI[]>([])
 
     useEffect(() => {
         requisicaoPrivada({method:'GET', url:'http://localhost:8080/buscas'})
         .then(response => {
             setMinhaBusca(response.data) 
         })
-        // .finally(() => console.log(minhaBusca))
     }, [])
-
-    console.log(minhaBusca)
 
     return(
         <div className="containerHist">
