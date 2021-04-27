@@ -7,17 +7,19 @@ import { requisicao, requisicaoPrivada } from '../../core/utils/requestUtils';
 import {Busca, BuscaAPI} from '../../core/utils/types'
 
 export default function Historico() {
-    const minhaBusca = useRef<BuscaAPI[]>([])
+    const [minhaBusca, setMinhaBusca] = useState([])
 
     let result: any[] = []
 
     useEffect(() => {
         requisicaoPrivada({method:'GET', url:'http://localhost:8080/buscas'})
         .then(response => {
-            minhaBusca.current = response.data 
+            setMinhaBusca(response.data) 
         })
-        .finally(() => console.log(minhaBusca.current))
+        // .finally(() => console.log(minhaBusca))
     }, [])
+
+    console.log(minhaBusca)
 
     return(
         <div className="containerHist">
@@ -31,12 +33,13 @@ export default function Historico() {
                     type="text" 
                     placeholder="Buscar no histórico" />
             </form>
+            
             <div className="flex-container-historico">
-                {minhaBusca.current.map((busca) => {
-                    return (
-                        <FormHistorico {...busca} key={busca.id}/>)})}
+                {minhaBusca.map((busca) => (
+                    <FormHistorico {...busca} />
+                ))}
             </div>
+            
         </div>
     );
 }
-
