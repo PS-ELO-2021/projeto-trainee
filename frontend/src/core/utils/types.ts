@@ -30,6 +30,16 @@ export type Busca = {
     }
 }
 
+export type BuscaAPI = {
+    id: number;
+    cep: string;
+    logradouro: string;
+    bairro: string;
+    cidade: string;
+    estado: string;
+    criadoEm: Date;
+}
+
 export type LoginFormState = {
     username: string;
     password: string;

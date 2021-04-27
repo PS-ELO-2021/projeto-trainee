@@ -34,11 +34,13 @@ public class ControladorBusca {
 	
 	@GetMapping
 	@Transactional
-	public List<BuscaDTO> listaDeBuscas() {
+	public ResponseEntity<List<BuscaDTO>> listaDeBuscas() {
 		Usuario usuario = servicoDeAutenticacao.usuarioAutenticado();
 		Set<Busca> lista = usuario.getBuscas();	
 		
-		return lista.stream().map(busca -> new BuscaDTO(busca)).collect(Collectors.toList());
+		List<BuscaDTO> listaDTO = lista.stream().map(busca -> new BuscaDTO(busca)).collect(Collectors.toList());
+		
+		return ResponseEntity.ok().body(listaDTO);
 	}
 	
 	@PostMapping
