@@ -43,11 +43,11 @@ export default function Historico() {
 
     return(
         <div>
-            <Link to="/" className="buttonCons" >Consulta</Link>
+            <Link to="/" className="buttonCons" >Nova Consulta</Link>
 
             <form className="flex-container-historico">
                 <input 
-                    className="input-busca" 
+                    className="input-busca noWrap"
                     type="text" 
                     placeholder="Buscar no histórico" 
                     onChange={event => {
