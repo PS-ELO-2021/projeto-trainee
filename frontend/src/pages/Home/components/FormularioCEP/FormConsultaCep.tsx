@@ -21,7 +21,7 @@ export default function FormConsultaCep() {
 
         requisicao({url: `https://viacep.com.br/ws/${cep}/json/`})
         .then(response => {
-            if(response.data.erro == true) {
+            if(response.data.erro === true) {
                 throw 404;
             }
 
@@ -79,31 +79,6 @@ export default function FormConsultaCep() {
             </form>
         </div>
     );
-}
-
-function buscarCep() {
-    const cep: string = (document.getElementById("cep") as HTMLInputElement).value
-    const logradouroElement: HTMLInputElement = document.getElementById("logradouro") as HTMLInputElement
-    const bairroElement: HTMLInputElement = document.getElementById("bairro") as HTMLInputElement
-    const cidadeElement: HTMLInputElement = document.getElementById("cidade") as HTMLInputElement
-    const estadoElement: HTMLInputElement = document.getElementById("estado") as HTMLInputElement
-
-    requisicao({url: `https://viacep.com.br/ws/${cep}/json/`})
-    .then(response => {
-        if(response.data.erro == true) {
-            throw 400;
-        }
-
-        logradouroElement.value = response.data.logradouro;
-        bairroElement.value = response.data.bairro
-        cidadeElement.value = response.data.localidade
-        estadoElement.value = response.data.uf
-
-        salvarCep(response)
-    })
-    .catch(() => {
-        
-    });
 }
 
 function salvarCep(response: AxiosResponse) {
