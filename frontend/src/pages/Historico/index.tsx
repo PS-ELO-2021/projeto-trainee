@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import FormHistorico from './components/FormularioHistorico/FormHistorico';
 import './index.css'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { requisicaoPrivada } from '../../core/utils/requestUtils';
 import { BuscaAPI } from '../../core/utils/types';
 import { useForm } from 'react-hook-form';
@@ -45,9 +45,9 @@ export default function Historico() {
         <div>
             <Link to="/" className="buttonCons" >Nova Consulta</Link>
 
-            <form className="flex-container-historico">
+            <form className="flex-container-barra">
                 <input 
-                    className="input-busca noWrap"
+                    className="input-busca"
                     type="text" 
                     placeholder="Buscar no histórico" 
                     onChange={event => {
@@ -66,10 +66,10 @@ export default function Historico() {
             
             <div className="flex-container-historico">
                 {isDigitando ? filtrado.map((busca) => (
-                    <FormHistorico {...busca} />
+                    <FormHistorico {...busca} key = {busca.id}/>
                 )):
                 minhaBusca.map((busca) => (
-                    <FormHistorico {...busca} />
+                    <FormHistorico {...busca} key = {busca.id}/>
                 ))}
             </div>
             

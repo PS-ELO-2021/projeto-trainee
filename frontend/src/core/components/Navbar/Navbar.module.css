@@ -4,6 +4,7 @@
     top: 0;
     height: 50px;
     width: 100%;
+    min-width: 375px;
     background: var(--dark-blue);
     align-items: center;
     padding: 5px 20px;
@@ -49,4 +50,38 @@
   color: var(--orange);
   font-weight: bold;
   font-size: 1.5rem;
+}
+
+.imagemPerfil, .imagemDiv {
+  display: none;
+}
+
+@media (max-width: 667px) {
+  .navbarTitle {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  .navbarText {
+    display: none;
+  }
+
+  .imagemPerfil {
+    display: initial;
+    border: 1px black solid;
+    border-radius: 25px;
+    background-color: var(--white);
+    height: 30px;
+    viewBox: 0 0 24 24;
+    width: 30px;
+    fill: var(--dark-blue);
+ }
+
+  .imagemDiv {
+    display: flex;
+    justify-content: flex-end;
+    width: 6.875rem;
+  }
+  .limit {
+    width: 6.875rem;
+  }
 }
