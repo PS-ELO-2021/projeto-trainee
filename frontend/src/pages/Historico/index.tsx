@@ -43,8 +43,6 @@ export default function Historico() {
 
     return(
         <div>
-            <h1 className="title">Consulta CEP</h1>
-            <h2 className="subtitle">Processo Seletivo ELO Jr 2021 - Grupo 2</h2>
             <Link to="/" className="buttonCons" >Consulta</Link>
 
             <form className="flex-container-historico">
