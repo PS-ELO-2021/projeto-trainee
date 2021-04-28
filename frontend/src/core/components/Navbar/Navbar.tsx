@@ -20,10 +20,9 @@ export default function Navbar() {
       else if (history.location.pathname === "/login") {
         setTextoBt("REGISTRAR")
       }
-      else if (history.location.pathname === "/regisrar") {
+      else if (history.location.pathname === "/registrar") {
         setTextoBt("LOGIN")
       }
-      console.log(textoBt)
     }, [location])
 
 
