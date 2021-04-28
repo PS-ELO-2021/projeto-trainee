@@ -23,6 +23,15 @@
   max-width: 1500px;
 }
 
+.flex-container-barra {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 1500px;
+}
+
 .containerHist {
     background-color: #30475E;
     height: 100vh;
@@ -63,6 +72,7 @@
   margin: 0.1rem 0.5rem 2.6rem 0.5rem;
   display: block;
   align-content: center;
+  background: var(--white);
   
   color: var(--dark-blue);
 
@@ -78,10 +88,27 @@
   flex-shrink: 0;
   width: 120px;
   text-align: right;
+  color: var(--dark-blue);
   
+  background: var(--white);
   outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
 }
 
-.noWrap {
-  flex-wrap: nowrap !important;
-}
+@media (max-device-width: 667px) {
+    .buttonCons {
+      width: 15rem;
+      margin-bottom: 1rem;
+    }
+    .input-busca {
+      margin: 0rem 0rem 1rem 2rem;
+    }
+    .input-chave {
+      margin-top: 0rem;
+      margin-bottom: 1rem;
+      margin-right: 2rem;
+    }
+  }
