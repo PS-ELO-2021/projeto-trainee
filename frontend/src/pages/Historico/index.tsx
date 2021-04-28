@@ -57,7 +57,7 @@ export default function Historico() {
                         setIsDigitando(true)
                     }}
                     value={valorBusca}/>
-                <select onChange={event => {
+                <select className="input-chave" onChange={event => {
                     setChaveBusca(event.target.value)
                 }}>
                     <option value="logradouro">Logradouro</option>
