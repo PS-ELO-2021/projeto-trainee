@@ -1,26 +1,37 @@
 .container {
     display: flex;
+    position: fixed;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    background: var(--dark-blue);
     align-items: center;
-    height: 60px;
-    background: #222831;
     padding: 5px 20px;
+    justify-content: space-between;
+}
+
+.limit {
+  display: flex;
+  width: 14rem;
 }
 
 .logoutButton {
-    background: #710407;
-
-    border-radius: 2px;
+  display: flex;
+    background: var(--orange);
+    color: var(--dark-blue);
+    font-size: 1rem;
+    font-weight: 650;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem;
+    height: 60%;
+    border-radius: 5px;
     border: none;
     outline: none;
+}
 
-    height: 60%;
-    width: 100px;
-
-    font-size: 1rem;
-    font-weight: 600;
-    color: white;
-
-    justify-self: right;
+.logoutButton:hover {
+  cursor: pointer;
 }
 
 .displayNone {
@@ -28,5 +39,14 @@
 }
 
 .navbarText {
-    color: #ECECEC;
+  color: var(--white);
+  text-align: right;
+  width: 14rem;
+  cursor: default;
+}
+
+.navbarTitle {
+  color: var(--orange);
+  font-weight: bold;
+  font-size: 1.5rem;
 }

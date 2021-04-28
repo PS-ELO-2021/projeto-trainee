@@ -2,28 +2,33 @@
   /* Dark Palette 1 */
   background-color: #222831;
   margin: 0rem 1.25rem 0.8rem 1.25rem;
-  border-radius: 3.125rem;
+  border-radius: 1.125rem;
   display: block;
-  padding: 2rem;
-  width: 31rem;
+  padding: 1.5rem;
+  width: 18.5rem;
+  height: 14rem;
   font-family: "Inter";
   /* Dark Palette 3 */
   color: #F2A365;
-  box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.25) !important;
 }
 
 .resultHist {
-  font-size: 1.5rem;
-  color: #222831;
+  color: var(--white);
   border-radius: 0.625rem;
-  padding: 0.625rem;
-  margin: 0.8rem 0.5rem 0.8rem 0.5rem;
+  padding: 0.125rem;
+  margin: 0.2rem 0.1rem 0.1rem 0.1rem;
   outline: none;
-  background: #ECECEC;  
-  text-align: justify;
+  text-align: left;
+  font-size: 1rem;
 }
 
 .resultHistCEP {
-  margin: 0.8rem 5.5rem 1.5rem 5.5rem;
+  margin: 0.1rem 0.1rem 0.6rem 0.1rem;
+  padding-bottom: 0.7rem;
   text-align: center;
+  border-bottom: 3px solid var(--blue);
+  border-radius: 0px;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
