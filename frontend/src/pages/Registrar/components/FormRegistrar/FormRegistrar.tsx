@@ -31,15 +31,15 @@ export default function FormRegistrar() {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input type="text" className={styles.input}
                     placeholder="Nome" name="nome" ref={register}>
-                </input><br /><br />
+                </input>
                 <input type="text" className={styles.input} 
                     placeholder="Email" name="email" ref={register}>
-                </input><br /><br />
+                </input>
                 <input type="password" className={styles.input} 
                 placeholder="Senha*" name="senha" ref={register}>
-                </input><br /><br />
+                </input>
                 <p className={styles.obs}>*A senha deve ter pelo menos 6 caracteres</p>
-                <input type="submit" className={styles.button} value="Cadastrar"></input><br /><br />
+                <input type="submit" className={styles.button} value="Cadastrar"></input>
             </form>
             <Link to="/login" className={styles.buttonLogin} >Faça o Login</Link>
         </div>
