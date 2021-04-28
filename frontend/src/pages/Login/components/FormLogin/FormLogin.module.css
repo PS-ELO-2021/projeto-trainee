@@ -1,36 +1,38 @@
 .container {
-    background-color: #222831;
+    background-color: var(--dark-blue);
     border-radius: 3.125rem;
-    margin-left: auto;
-    margin-right: auto;
+
+    margin: 5rem auto;
     display: block;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+
     padding: 2rem;
+
     width: 31rem;
-    height: 30.625re,;
-    font-family: "Inter";
+    height: 30.625rem;
+
     text-align: center;
-    color: #F2A365;
-    box-shadow: 10px 10px 0px 2px rgba(37,54,71,0.75);
-    -webkit-box-shadow: 10px 10px 0px 2px rgba(37,54,71,0.75);
-    -moz-box-shadow: 10px 10px 0px 2px rgba(37,54,71,0.75);
+    color: var(--orange);
+
+    box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
 }
 
 .container h2 {
     margin: 2rem;
-    font-size: 58px;
+
+    font-size: 3.625rem;
     font-weight: bold;
+
     line-height: 0.113rem;  
 }
 
 .container p {
     margin: 2rem;
-    font-size: 20px;
-    color: #fff;
+    font-size: 1.25rem;
+    color: white;
 }
 
 .input {
+    margin: 0.5rem;
     border-radius: 0.625rem;
     padding: 0.625rem;
     width: 25.625rem;
@@ -38,37 +40,44 @@
 }
 
 .button {
-    background-color: #F2A365;
+    background-color: var(--orange);
+
     border: none;
     border-radius: 0.625rem;
+
     margin-top: 1.563rem;
     padding: 0.625rem;
+
     width: 25.625rem;
     height: 3.125rem;
-    font-family: "Inter";
-    font-size: 26px;
+
+    font-size: 1.625rem;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    color: #222831;
+
+    color: var(--dark-blue);
     cursor: pointer;
 }
 
 .buttonCriar {
-    background-color: #fff;
+    background-color: white;
+
     border: none;
     border-radius: 0.625rem;
-    margin-top: 1.563rem;
-    margin-left: auto;
-    margin-right: auto;
-    color: #000;
-    padding: 0.625rem;
+
+    margin: 2rem auto 0;
     display: block;
+
+    padding: 0.625rem;
+
     width: 25.625rem;
     height: 3.125rem;
-    font-family: "Inter";
+
     font-size: 1.25rem;
     text-align: center;
     text-decoration: none;
+
+    color: var(--dark-blue);
     cursor: pointer;
 }
