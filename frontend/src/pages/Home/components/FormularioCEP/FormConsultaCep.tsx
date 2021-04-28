@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './FormConsultaCep.module.css';
-import {requisicao} from '../../../../core/utils/requestUtils'
+import { requisicao } from '../../../../core/utils/requestUtils'
 import { getSessaoUsuarioAsLoginType } from '../../../../core/utils/auth';
 import { AxiosResponse } from 'axios';
 import { Busca } from '../../../../core/utils/types';
@@ -9,30 +9,20 @@ export default function FormConsultaCep() {
     return(
         <div className={styles.container}>
             <form>
-                <div className={styles.formularioCep}>
-                    <input id="cep" 
-                    className={`${styles.inputCep} ${styles.inputHome}`} 
-                    type="text" 
-                    placeholder="Digite o CEP" 
-                    pattern="[0-9]{8}" />
+                <input id="cep" 
+                className={`${styles.inputCep} ${styles.inputHome}`} 
+                type="text" 
+                placeholder="Digite o CEP" 
+                pattern="[0-9]{8}" />
 
-                    <input type="button" 
-                    value="Consultar" 
-                    className={styles.submitButton}
-                    onClick={() => {buscarCep()}} />
-                </div>
-                <div>
-                    <input className={styles.inputHome} id="logradouro" type="text" disabled></input>
-                </div>
-                <div>
-                    <input className={styles.inputHome} id="bairro" type="text" disabled></input>
-                </div>
-                <div>
-                    <input className={styles.inputHome} id="cidade" type="text" disabled></input>
-                </div>
-                <div>
-                    <input className={styles.inputHome} id="estado" type="text" disabled></input>
-                </div>
+                <input type="button" 
+                value="Consultar" 
+                className={styles.submitButton}
+                onClick={() => {buscarCep()}} />
+                <input className={styles.inputHome} id="logradouro" type="text" disabled></input>
+                <input className={styles.inputHome} id="bairro" type="text" disabled></input>
+                <input className={styles.inputHome} id="cidade" type="text" disabled></input>
+                <input className={styles.inputHome} id="estado" type="text" disabled></input>
             </form>
         </div>
     );

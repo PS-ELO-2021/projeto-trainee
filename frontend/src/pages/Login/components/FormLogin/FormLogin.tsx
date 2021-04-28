@@ -26,12 +26,12 @@ export default function FormLogin() {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input type="text" className={styles.input} 
                     placeholder="Email" name="username" ref={register}>
-                </input><br /><br />
+                </input>
                 <input type="password" className={styles.input} 
                     placeholder="Senha" name="password" ref={register}>
-                </input><br /><br />
+                </input>
                 <input type="submit" className={styles.button} value="Login">
-                </input><br /><br />
+                </input>
             </form>
             <Link to="/registrar" className={styles.buttonCriar}>Crie sua conta</Link>
         </div>
