@@ -7,9 +7,11 @@ import { BuscaAPI } from '../../core/utils/types';
 import { useForm } from 'react-hook-form';
 
 export default function Historico() {
-    const [name, setName] = useState<string>("")
-    const {register, handleSubmit, errors} = useForm();
+    const [valorBusca, setValorBusca] = useState<string>("")
+    const [chaveBusca, setChaveBusca] = useState<string>("logradouro")
     const [minhaBusca, setMinhaBusca] = useState<BuscaAPI[]>([])
+    const [isDigitando, setIsDigitando] = useState(false)
+    const [filtrado, setFiltrado] = useState<BuscaAPI[]>([])
 
     useEffect(() => {
         requisicaoPrivada({method:'GET', url:'http://localhost:8080/buscas'})
@@ -25,43 +27,50 @@ export default function Historico() {
         return d.getTime() - c.getTime();
     })
 
-    const onSubmit = () => {
-        let filtrado = minhaBusca.filter(busca => {
-            const chave = "logradouro"
-            if(chave === "logradouro") {
-                return busca.logradouro.startsWith(name)
+    useEffect(() => {
+        setFiltrado(minhaBusca.filter(busca => {
+            if(chaveBusca === "logradouro") {
+                return busca.logradouro.startsWith(valorBusca)
             }
-            else if(chave === "cidade") {
-                return busca.cidade.startsWith(name)
+            else if(chaveBusca === "cidade") {
+                return busca.cidade.startsWith(valorBusca)
             }
             else {
-                return busca.estado.startsWith(name)
+                return busca.estado.startsWith(valorBusca)
             }
-        })
-
-        console.log(filtrado)
-    }
+        }))
+    }, [valorBusca])
 
     return(
         <div className="containerHist">
             <h1>CONSULTA CEP</h1>
             <h2>Processo Seletivo ELO Jr 2021 - Grupo 2</h2>
-            <Link to="/" className="buttonHist" >Consulta</Link>
+            <Link to="/" className="buttonHist">Consulta</Link>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="flex-container-historico">
+            <form className="flex-container-historico">
                 <input 
                     className="input-busca" 
                     type="text" 
                     placeholder="Buscar no histórico" 
-                    name="valor"
-                    ref={register}
-                    onChange={event => setName(event.target.value)}
-                    value={name}/>
-                <input type="submit" className="input-busca"/>
+                    onChange={event => {
+                        setValorBusca(event.target.value)
+                        setIsDigitando(true)
+                    }}
+                    value={valorBusca}/>
+                <select onChange={event => {
+                    setChaveBusca(event.target.value)
+                }}>
+                    <option value="logradouro">Logradouro</option>
+                    <option value="cidade">Cidade</option>
+                    <option value="estado">Estado</option>
+                </select>
             </form>
             
             <div className="flex-container-historico">
-                {minhaBusca.map((busca) => (
+                {isDigitando ? filtrado.map((busca) => (
+                    <FormHistorico {...busca} />
+                )):
+                minhaBusca.map((busca) => (
                     <FormHistorico {...busca} />
                 ))}
             </div>
