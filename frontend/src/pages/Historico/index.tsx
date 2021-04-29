@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import FormHistorico from './components/FormularioHistorico/FormHistorico';
 import './index.css'
 import { Link } from 'react-router-dom';
 import { requisicaoPrivada } from '../../core/utils/requestUtils';
 import { BuscaAPI } from '../../core/utils/types';
-import { useForm } from 'react-hook-form';
 
 export default function Historico() {
     const [valorBusca, setValorBusca] = useState<string>("")

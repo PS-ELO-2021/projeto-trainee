@@ -1,4 +1,4 @@
-import axios, {AxiosRequestConfig, Method} from 'axios';
+import axios, {AxiosRequestConfig} from 'axios';
 import { getSessaoUsuario, getSessaoUsuarioAsLoginType } from './auth';
 import { LoginData } from './types';
 

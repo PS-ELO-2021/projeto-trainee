@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styles from './FormLogin.module.css'
 import { useForm } from 'react-hook-form'
-import { fazerLogin, isAutenticado, requisicao } from '../../../../core/utils/requestUtils';
-import { Link, Redirect, Route, useHistory } from 'react-router-dom';
+import { fazerLogin } from '../../../../core/utils/requestUtils';
+import { Link, useHistory } from 'react-router-dom';
 import { LoginFormState } from '../../../../core/utils/types';
 
 export default function FormLogin() {

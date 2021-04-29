@@ -1,6 +1,6 @@
 import styles from './Navbar.module.css'
 import { isAutenticado } from '../../utils/requestUtils'
-import { Redirect, useHistory } from 'react-router';
+import { useHistory } from 'react-router';
 import { getSessaoUsuarioAsLoginType } from '../../utils/auth';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
