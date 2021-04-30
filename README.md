@@ -52,7 +52,7 @@ O projeto foi desenvolvido para a etapa final do processo seletivo da empresa EL
 
 <center><div style="display:flex flex-wrap:wrap">
 <img src="./images/Login-mobile.png" alt="login" height="480" style="margin:0 50px"/>
-<img src="./images/Register-mobile.png" alt="registrar" height="480" style="margin:0 50px"/>
+<img src="./images/Register-mobile.png" alt="registrar" height="480" style="margin:0 50px"/><br>
 <img src="./images/Search-mobile.png" alt="consulta" height="480" style="margin:15px 50px"/>
 <img src="./images/History-mobile.png" alt="histórico" height="480" style="margin:15px 50px"/>
 </div></center>
@@ -60,6 +60,4 @@ O projeto foi desenvolvido para a etapa final do processo seletivo da empresa EL
 ---
 
 ### <b style="font-size:20px">Desenvolvido por:
-<center>João Pedro S. Franco</center>
-<center>João Víctor De Podestà</center>
-<center>Lara Portilho Marques</b></center>
+João Pedro S. Franco, João Víctor De Podestà e Lara Portilho Marques</b>
