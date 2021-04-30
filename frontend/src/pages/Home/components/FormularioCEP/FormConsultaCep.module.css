@@ -1,56 +1,60 @@
 .container {
     background-color: var(--dark-blue);
     border-radius: 3.125rem;
-
-    margin: 5rem auto;
+  
     display: block;
-
+    margin: auto;
+  
     padding: 2rem;
-
-    width: 31rem;
-    height: 26rem;
-
+  
+    width: 31.25rem;
+  
     text-align: center;
     color: var(--orange);
-
-    box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
-
+  
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
+    align-content: center;
 }
 
 .inputHome {
     margin: 0.5rem;
     border-radius: 0.625rem;
 
-    padding: 0.625rem;
+    padding: 0.7rem;
 
-    height: 3.125rem;
-    width: 25.625rem;
+    width: 95%;
 
     margin-bottom: 1rem;
-    
-    font-size: 1.5rem;
+
+    font-size: 1.3rem;
+    color: var(--dark-blue);
 
     outline: none;
+    background-color: var(--white);
 }
 
 .inputHome:disabled {
     background-color: white;
     color: black;
+    background-color: var(--white);
+    color: var(--dark-blue);
 }
 
 .inputCep {
     margin-right: 0.625rem;
     width: 12.5rem;
+    background-color: var(--white);
+    color: var(--dark-blue);
 }
 
 .submitButton {
-    background-color: white;
+    background-color: var(--white);
     border-radius: 0.625rem;
-    height: 3.125rem;
+    padding: 0.7rem;
     
     margin-bottom: 1rem;
     
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 
     margin-right: 10px;
     width: 12.5rem;
@@ -58,8 +62,35 @@
 
     outline: none;
     cursor: pointer;
+    color: var(--dark-blue);
 }
 
 .submitButton:hover {
-    background-color: white;
+    background-color: var(--white);
 }
+
+@media (max-device-width: 667px) {
+  .container {
+    width: 95%;
+    min-width: 20rem;
+    max-width: 31.25rem;
+    padding: 1.2rem 1rem 1.2rem 1rem;
+  }
+
+  .submitButton {
+    font-size: 1.0rem;
+    padding: 0.5rem;
+    width: 28%;
+  }
+
+  .inputHome {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    max-width: 90%;
+  }
+
+  .inputCep {
+    max-width: 50%;
+  }
+}
+

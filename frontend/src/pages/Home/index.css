@@ -1,36 +1,29 @@
 .buttonHist {
-    background-color: var(--orange);
+  background-color: var(--orange);
 
-    border-radius: 10px;
+  border-radius: 10px;
 
-    margin: 2rem auto 3rem;
-    display: block;
+  margin: 2rem auto 3rem;
+  display: block;
 
-    padding: 0.625rem;
+  padding: 0.625rem;
 
-    width: 25.625rem;
-    height: 3.125rem;
+  width: 25.625rem;
+  height: 3.125rem;
 
-    font-weight: bold;
-    font-size: 1.625rem;
-    text-align: center;
-    text-decoration: none;
+  font-weight: bold;
+  font-size: 1.625rem;
+  text-align: center;
+  text-decoration: none;
 
-    color: var(--dark-blue);
-    cursor: pointer;
+  color: var(--dark-blue);
+  cursor: pointer;
+  margin-top: 70px;
 }
 
-.title {
-    font-size: 6.25rem;
-    font-weight: bold;
-    text-align: center;
-    color: var(--orange);
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.subtitle {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    color: var(--orange);
+@media (max-device-width: 667px) {
+  .buttonHist {
+    width: 15rem;
+    margin-bottom: 1rem;
+  }
 }

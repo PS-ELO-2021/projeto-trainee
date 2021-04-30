@@ -58,7 +58,7 @@
 
 @media (max-width: 667px) {
   .navbarTitle {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     flex-shrink: 0;
   }
   .navbarText {
@@ -71,7 +71,6 @@
     border-radius: 25px;
     background-color: var(--white);
     height: 30px;
-    viewBox: 0 0 24 24;
     width: 30px;
     fill: var(--dark-blue);
  }
@@ -83,5 +82,8 @@
   }
   .limit {
     width: 6.875rem;
+  }
+  .logoutButton {
+    font-size: 0.65rem;
   }
 }

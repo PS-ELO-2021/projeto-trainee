@@ -31,6 +31,7 @@ export default function FormRegistrar() {
     }
 
     return(
+    <div className={styles.flexBox}>
         <div className={styles.container}>
             <h2>Criar Conta</h2>
             <p className={styles.msg}>Informe seu nome, email e senha</p>
@@ -76,5 +77,6 @@ export default function FormRegistrar() {
             </form>
             <Link to="/login" className={styles.buttonLogin} >Faça o Login</Link>
         </div>
+    </div>
     );
 }

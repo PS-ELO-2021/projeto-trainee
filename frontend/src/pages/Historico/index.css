@@ -33,11 +33,11 @@
 }
 
 .containerHist {
-    background-color: #30475E;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: #30475E;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .buttonCons {
@@ -73,7 +73,7 @@
   display: block;
   align-content: center;
   background: var(--white);
-  
+
   color: var(--dark-blue);
 
   outline: none;
@@ -89,7 +89,7 @@
   width: 120px;
   text-align: right;
   color: var(--dark-blue);
-  
+
   background: var(--white);
   outline: none;
   -webkit-appearance: none;
@@ -99,16 +99,16 @@
 }
 
 @media (max-device-width: 667px) {
-    .buttonCons {
-      width: 15rem;
-      margin-bottom: 1rem;
-    }
-    .input-busca {
-      margin: 0rem 0rem 1rem 2rem;
-    }
-    .input-chave {
-      margin-top: 0rem;
-      margin-bottom: 1rem;
-      margin-right: 2rem;
-    }
+  .buttonCons {
+    width: 15rem;
+    margin-bottom: 1rem;
   }
+  .input-busca {
+    margin: 0rem 0rem 1rem 2rem;
+  }
+  .input-chave {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+  }
+}

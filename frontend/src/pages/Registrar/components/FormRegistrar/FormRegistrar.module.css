@@ -1,49 +1,57 @@
+.flexBox {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    min-height: 665px;
+    margin-top: 35px;
+}
+
 .container {
     background-color: var(--dark-blue);
     border-radius: 3.125rem;
-
-    margin: 5rem auto;
+  
     display: block;
-
+  
     padding: 2rem;
-
-    width: 31rem;
-    height: 35rem;
-
+  
+    width: 31.25rem;
+  
     text-align: center;
     color: var(--orange);
-
-    box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
+  
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
+    align-content: center;
 }
 
 .container h2 {
-    margin: 2rem;
-
     font-size: 3.625rem;
     font-weight: bold;
-
-    line-height: 0.113rem;
 }
 
 .obs {
-    margin: 0.031rem 2rem 2rem;
+    margin: 0.2rem 2rem 1.2rem;
     font-size: 0.875rem;
     font-weight: bold;
-    color: white;
+    color: var(--white);
 }
 
 .msg {
-    margin: 2rem;
+    margin: 0.75rem 0 1.2rem 0;
     font-size: 1.25rem;
-    color: white;
+    color: var(--white);
 }
 
 .input {
     margin: 0.5rem;
     border-radius: 0.625rem;
     padding: 0.625rem;
-    width: 25.625rem;
     outline: none;
+    width: 93%;
+    background-color: var(--white);
+    font-size: 1rem;
 }
 
 .button {
@@ -55,7 +63,7 @@
     margin-top: 1.563rem;
     padding: 0.625rem;
 
-    width: 25.625rem;
+    width: 93%;
     height: 3.125rem;
 
     font-size: 1.625rem;
@@ -68,7 +76,7 @@
 }
 
 .buttonLogin {
-    background-color: white;
+    background-color: var(--white);
 
     border: none;
     border-radius: 0.625rem;
@@ -76,9 +84,9 @@
     margin: 2rem auto 0;
     display: block;
 
-    padding: 0.625rem;
+    padding: 0.8rem;
 
-    width: 25.625rem;
+    width: 93%;
     height: 3.125rem;
 
     font-size: 1.25rem;
@@ -89,3 +97,55 @@
     cursor: pointer;
 }
 
+@media (max-device-width: 667px) {
+  .flexBox {
+    margin-top: 0px;
+  }
+
+  .container {
+    width: 70%;
+    min-width: 20rem;
+    padding: 1.5rem 2rem 1.5rem 2rem;
+  }
+
+  .buttonLogin {
+    height: 2rem;
+    font-size: 1.1rem;
+    padding: 0.4rem;
+    margin-top: 0.8rem;
+  }
+
+  .button {
+    height: 2.2rem;
+    font-size: 1.3rem;
+    padding: 0.25rem;
+    margin-top: 0.8rem;
+  }
+
+  .input {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .msg {
+    font-size: 1rem;
+    margin: 0.6rem 0 0.9rem 0;
+  }
+
+  .obs {
+    margin: 0.2rem 0rem 0.7rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--white);
+  }
+
+  small {
+    font-size: 0.7rem;
+  }
+
+  .container h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+
+  }
+}
