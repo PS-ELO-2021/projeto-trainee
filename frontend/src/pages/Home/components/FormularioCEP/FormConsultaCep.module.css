@@ -88,5 +88,9 @@
     padding: 0.5rem;
     max-width: 90%;
   }
+
+  .inputCep {
+    max-width: 50%;
+  }
 }
 
