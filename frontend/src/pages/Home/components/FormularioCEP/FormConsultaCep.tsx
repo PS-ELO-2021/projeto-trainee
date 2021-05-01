@@ -48,15 +48,15 @@ export default function FormConsultaCep() {
                 ref={register({
                     pattern: {
                         value: /[0-9]{8}/,
-                        message: "Cep deve conter apenas números!",
+                        message: "CEP deve conter apenas números!",
                     },
                     minLength: {
                         value: 8,
-                        message: "Cep deve conter 8 números!"
+                        message: "CEP deve conter 8 números!"
                     },
                     maxLength: {
                         value: 8,
-                        message: "Cep deve conter 8 números!"
+                        message: "CEP deve conter 8 números!"
                     }
                 })}/>
                 
@@ -64,12 +64,12 @@ export default function FormConsultaCep() {
                 <input type="submit" 
                 value="Consultar" 
                 className={styles.submitButton} />
-                
+        
                 {errors.cep && (
                     <small>{errors.cep.message}</small>
                 )}
                 {isCepInvalido && (
-                    <small>Cep não encontrado</small>
+                    <small>CEP não encontrado</small>
                 )}
 
                 <input className={styles.inputHome} id="logradouro" type="text" disabled></input>

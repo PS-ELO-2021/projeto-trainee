@@ -61,7 +61,7 @@ export default function FormRegistrar() {
                     required: "Campo obrigatório!",
                     minLength: {
                         value: 6,
-                        message: "A senha deve possuir no mínimo 6 caracteres!"
+                        message: "Senha deve possuir no mínimo 6 caracteres!"
                     }
                 })}>
                 </input>
